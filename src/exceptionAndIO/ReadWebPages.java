@@ -13,9 +13,11 @@ public class ReadWebPages {
 	ArrayList<String> links = new ArrayList<String>();
 	
 	public static void main(String[] args) {
-		ReadWebPages readWeb = new ReadWebPages();
-		readWeb.readPage("http://java.sun.com//index.html");
-		readWeb.readListOfLinks();
+		ReadWebPages fristDepthOfSearch = new ReadWebPages();
+		fristDepthOfSearch.readPage("http://java.sun.com//index.html");
+		
+		
+		fristDepthOfSearch.readListOfLinks();
 	}
 
 	public void readPage(String linkURL) {
