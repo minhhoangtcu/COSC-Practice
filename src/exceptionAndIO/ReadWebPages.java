@@ -19,6 +19,7 @@ public class ReadWebPages {
 		
 		fristDepthOfSearch.readListOfLinks();
 	}
+	
 
 	public void readPage(String linkURL) {
 		Scanner in = null;
