@@ -1,7 +1,59 @@
 package exceptionAndIO;
 
+import java.io.*;
+import java.util.Scanner;
+
+import javax.swing.JFileChooser;
+
 public class MonoAlphabeticCipher {
 	private static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+	private static final String DEFAULT_KEYWORD = "FEATHR";
+	
+	public static void main(String[] args) {
+		MonoAlphabeticCipher cipher = new MonoAlphabeticCipher();
+		cipher.encodeFile();
+	}
+	
+	public void encodeFile() {
+		PrintWriter out = null;
+		out = initializeWriter(out);
+		Scanner in = null;
+		in = initializeScanner(in);
+		
+		if (in != null && out != null) {
+			while (in.hasNext()) {
+				String originalLine = in.nextLine();
+				String encryptedLine = encode(originalLine, DEFAULT_KEYWORD);
+				System.out.println("original: \t" + originalLine);
+				System.out.println("encrypted: \t" + encryptedLine);
+				out.println(encryptedLine);
+			}
+			in.close();
+			out.close();
+		}
+	}
+	
+	private PrintWriter initializeWriter(PrintWriter out) {
+		try {
+			out = new PrintWriter("MonoAlphabeticCipherOutput.txt");
+		} catch (IOException e) {
+			System.err.println("Out put file not found/initialized");
+		}
+		return out;
+	}
+	
+	private Scanner initializeScanner(Scanner in) {
+		JFileChooser chooser = new JFileChooser();
+		int returnVal = chooser.showOpenDialog(null);
+		if (returnVal == JFileChooser.APPROVE_OPTION) {
+			try {
+				in = new Scanner(chooser.getSelectedFile());
+			} catch (FileNotFoundException e) {
+				System.err.println("File not found");
+			}
+		}
+		return in;
+	}
 	
 	/*
 	 * Encode the provided input and the keyWord.
