@@ -10,7 +10,7 @@ public class LinkedListTest {
 		test.list.displayAllNodes();
 		test.list.removeFirstNode();
 		test.list.displayAllNodes();
-		test.list.removeNode("The Hobbit");
+		test.list.removeNode("Don Quixote");
 		test.list.displayAllNodes();
 	}
 	

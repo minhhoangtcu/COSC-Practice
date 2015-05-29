@@ -14,7 +14,7 @@ public class Node {
 	}
 	
 	public void display() {
-		System.out.printf("%s(%d) sold %d of copies", bookName, yearOfPublish, copiesSold);
+		System.out.printf("%s(%d) sold %d of copies%n", bookName, yearOfPublish, copiesSold);
 	}
 	
 	public String toString() {
