@@ -1,0 +1,41 @@
+Surrey
+1814
+M/Guaga/Daniel/20/Savoy Court Martial/7/Mayo/Stealing money/Soldier sailor/
+F/Ireland/Jessica/35/Bristol QS England/7/Dublin/Stealing money/Barber/
+M/Kean/James/27/Middlesex Gaol Delivery/England/14/Cork Co/Desertion/Labourer/
+M/Kelly/James/30/Lancaster QS England/7/Armagh/Robbery man/Brickmaker/
+F/Longford/Patricia/33/Middlesex Gaol Delivery England/7/Tipperary/Pledging stolen property/Tallow chandler/
+*****
+1816
+M/Allen/John/24/Tipperary Co/7/Tipperary/Stealing money/Labourer/
+M/Bearfoot/Thomas/18/Dublin City/7/Dublin Co/Robbery highway/Labourer/
+M/Bernie/Michael/25/Leitrim Co/Life/Leitrim Co/Robbery highway/Labourer/
+F/Callaghan/Mary/44/Cork City/7/Cork City/Robbery highway/Nursery worker gardener/
+F/Callaghan/Patricia/20/Dublin City/7/Dublin Co/Robbery highway/Sewer/
+M/Callaghan/Thomas/27/Dublin City/7/Meath/Stealing clothes/Servant labourer/
+*****
+1819
+M/Burn/William/41/Surrey QS England/7/Dublin/Robbery man/Sailor/
+M/Carney/Thomas/19/Lancaster Assizes England/7/Dublin/Pledging stolen property/Tuscan cutter/
+M/Mooney/James/25/Northumberland QS England/7/Drogheda Louth Co/Picking pockets/Weaver/
+*****
+1823
+M/Ferry/Patrick/20/Devon Assizes England/7/Westmeath/Robbery highway/Postillion/
+*****
+1831
+F/Collins/Margaret/16/London England/14/Limerick/Picking pockets/Tailor/
+F/Dwyer/Sarah/50/London England/7/Tipperary/Stealing pewter pots/Gardener/
+M/Haley/Dennis/34/London England/7/Cork/Stealing money/Paviour/
+M/Smith/Edward/21/Worcester England/7/Roscommon/Stealing fowls/Ploughman reaper sower milkman/
+*****
+1834
+F/Agus/Catherine/44/Middlesex Session of Peace England/7/Westmeath/Stealing money/Ropemaker/
+F/Brennan/Mary/18/York QS England/7/Derry Co/Robbery highway/Bakers apprentist/
+M/Higgins/John/35/York QS England/7/Dublin/Robbery highway/Soldier porter/
+*****
+1840
+F/Bryan/Mary/21/Lancaster (Liverpool) QS England/7/Dublin/Stealing clothes/Servant house/
+F/Bryant/Mary/23/Central Criminal Court London England/10/Cork Co/Stealing money/Maid house/
+F/Burns/Margaret/46/Central Criminal Court London England/7/Kerry Co/Robbery street/Housekeeper/
+F/Cairt/Elizabeth/28/Glasgow Court of Justiciary Scotland/7/Armagh Co/Stealing clothes/Maid kitchen/
+*****
