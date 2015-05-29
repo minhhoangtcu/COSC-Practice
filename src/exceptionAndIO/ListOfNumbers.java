@@ -98,8 +98,9 @@ public class ListOfNumbers {
     
     public void readList2(String fileName) {
         String line = null;
+        RandomAccessFile raf = null;
         try {
-            RandomAccessFile raf = new RandomAccessFile(fileName, "r");
+        	raf = new RandomAccessFile(fileName, "r");
             while ((line = raf.readLine()) != null) {
                 Integer i = new Integer(Integer.parseInt(line));
                 System.out.println(i);
@@ -109,6 +110,14 @@ public class ListOfNumbers {
             System.err.println("File: " + fileName + " not found.");
         } catch (IOException io) {
             System.err.println(io.toString());
+        }
+        finally {
+        	if (raf != null)
+				try {
+					raf.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
         }
     }
 
@@ -128,7 +137,11 @@ public class ListOfNumbers {
             System.err.println(io.toString());
         } finally {
             if (input != null) {
-                //input.close();
+                try {
+					input.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
             }
         }
     }
