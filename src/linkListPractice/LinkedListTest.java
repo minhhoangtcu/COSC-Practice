@@ -8,9 +8,11 @@ public class LinkedListTest {
 		LinkedListTest test = new LinkedListTest();
 		test.initData();
 		test.list.displayAllNodes();
-		test.list.removeFirstNode();
-		test.list.displayAllNodes();
-		test.list.removeNode("Don Quixote");
+		//test.list.removeFirstNode();
+		//test.list.displayAllNodes();
+		//test.list.removeNode("Don Quixote");
+		//test.list.displayAllNodes();
+		test.list.find("Don Quixote");
 		test.list.displayAllNodes();
 	}
 	

@@ -47,6 +47,16 @@ public class LinkedList {
 		System.out.println("*******************************");
 	}
 	
+	public Node find(String name) {
+		Node currentNode = newest;
+		while (currentNode != null && currentNode.bookName != name) {
+			System.out.println("Found the node with the name: " + name);
+			return currentNode;
+		}
+		System.out.println("Object not found");
+		return null;
+	}
+	
 	public Node removeNode(String name) {
 		Node currentNode = newest;
 		if (currentNode.bookName == name) {
