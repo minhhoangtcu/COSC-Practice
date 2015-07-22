@@ -49,36 +49,42 @@ public class LinkedList {
 	
 	public Node find(String name) {
 		Node currentNode = newest;
-		while (currentNode != null && currentNode.bookName != name) {
-			System.out.println("Found the node with the name: " + name);
-			return currentNode;
+		if (!isEmpty()) {
+			while (currentNode != null && currentNode.bookName != name) {
+				System.out.println("Found the node with the name: " + name);
+				return currentNode;
+			}
 		}
 		System.out.println("Object not found");
 		return null;
 	}
 	
 	public Node removeNode(String name) {
-		Node currentNode = newest;
-		if (currentNode.bookName == name) {
-			newest = currentNode.next;
+		if (!isEmpty()) {
+			Node currentNode = newest;
+			if (currentNode.bookName == name) {
+				newest = currentNode.next;
+				System.out.println("Removed Node named " + currentNode + "\n");
+				return currentNode;
+			}
+			
+			Node previousNode = null;
+			while (!currentNode.bookName.equals(name)) {
+				if (currentNode.next != null) {
+					previousNode = currentNode;
+					currentNode = currentNode.next;
+				}
+				else {
+					System.out.println("Reached end of the list, cannot find node " + name + " to remove");
+					return null;
+				}
+			}
+			previousNode.next = currentNode.next;
 			System.out.println("Removed Node named " + currentNode + "\n");
 			return currentNode;
 		}
-		
-		Node previousNode = null;
-		while (!currentNode.bookName.equals(name)) {
-			if (currentNode.next != null) {
-				previousNode = currentNode;
-				currentNode = currentNode.next;
-			}
-			else {
-				System.out.println("Reached end of the list, cannot find node " + name + " to remove");
-				return null;
-			}
-		}
-		previousNode.next = currentNode.next;
-		System.out.println("Removed Node named " + currentNode + "\n");
-		return currentNode;
+		System.out.println("Empty list, cannot remove");
+		return null;
 	}
 	
 }
