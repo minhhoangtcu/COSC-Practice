@@ -16,8 +16,8 @@ public class Stack {
 	
 	public void push(int number) {
 		if (topOfStack + 1 < stackSize) { // Check to see if we are trying to push out of the limit of the stack or not
-			System.out.printf("Pushed number %d into the top of stack(%d)%n", number, topOfStack);
 			topOfStack++;
+			System.out.printf("Pushed number %d into the top of stack(%d)%n", number, topOfStack);
 			stack[topOfStack] = number;
 		}
 		else {
@@ -26,7 +26,7 @@ public class Stack {
 	}
 	
 	public int pop() {
-		if (topOfStack >= 0) {
+		if (topOfStack >= 0) { // Check to see if the stack is empty or not
 			int output = stack[topOfStack];
 			stack[topOfStack] = -1; // Again, -1 will represent as empty.
 			System.out.printf("Poped number %d out of the top of stack(%d)%n", output, topOfStack);
@@ -39,4 +39,17 @@ public class Stack {
 		}
 	}
 
+	public void printAll() {
+		if (topOfStack >= 0) {
+			System.out.println("********************");
+			for (int i = 0; i <= topOfStack; i++) {
+				System.out.printf("Index: %d with value: %d%n", i, stack[i]);
+			}
+			System.out.println("********************");
+		}
+		else {
+			System.out.println("The list is empty, nothing to display.");
+		}
+		
+	}
 }
