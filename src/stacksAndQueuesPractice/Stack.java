@@ -16,7 +16,7 @@ public class Stack {
 	
 	public void push(int number) {
 		if (topOfStack + 1 < stackSize) { // Check to see if we are trying to push out of the limit of the stack or not
-			System.out.printf("Pushed number %d into the top of stack(%d)", number, topOfStack);
+			System.out.printf("Pushed number %d into the top of stack(%d)%n", number, topOfStack);
 			topOfStack++;
 			stack[topOfStack] = number;
 		}
@@ -29,6 +29,7 @@ public class Stack {
 		if (topOfStack >= 0) {
 			int output = stack[topOfStack];
 			stack[topOfStack] = -1; // Again, -1 will represent as empty.
+			System.out.printf("Poped number %d out of the top of stack(%d)%n", output, topOfStack);
 			topOfStack--;
 			return output;
 		}
