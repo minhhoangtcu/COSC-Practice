@@ -6,6 +6,7 @@ public class Node {
 	int copiesSold;
 	int yearOfPublish;
 	Node next;
+	Node previous;
 	
 	public Node(String book, int copiesSold, int yearOfPublish) {
 		this.bookName = book;
