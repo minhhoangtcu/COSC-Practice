@@ -17,5 +17,6 @@ public class DoublyLinkedListTest {
 		list.insertFirstNode("The Lord of the Rings", 150000000, 1954);
 		list.insertLastNode("A Game of Ice and Fire", 50000000, 1995);
 		list.insertFirstNode("The Hobbit", 140600000, 1937);
+		list.insertAfterKey("English-Vietnamese Dictionary", 5000000, 1905, "A Tale Of Two Cities");
 	}
 }

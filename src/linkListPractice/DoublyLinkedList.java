@@ -75,16 +75,16 @@ public class DoublyLinkedList {
 			
 			// After finding the node with the key, we have to check if the is in last position or not.
 			if (currentNode == oldest) {
-				
+				oldest.next = newNode;
+				newNode.previous = oldest;
+				oldest = newNode;
 			}
-			
-			if (currentNode.bookName.equals(key)) {
-					newNode.next = currentNode.next;
-					newNode.previous = currentNode;
-					currentNode.next.previous = newNode;
-					currentNode.next = newNode;
-				}
-			currentNode = currentNode.next;
+			else {
+				newNode.next = currentNode.next;
+				newNode.previous = currentNode;
+				currentNode.next.previous = newNode;
+				currentNode.next = newNode;
+			}
 		}
 	}
 	
