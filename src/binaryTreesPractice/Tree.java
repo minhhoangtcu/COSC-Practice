@@ -18,7 +18,7 @@ public class Tree {
 			Node focusNode = root;
 			Node parent = null;
 			while (true) {
-				if (key < newNode.getKey()) {
+				if (key < focusNode.getKey()) {
 					parent = focusNode;
 					focusNode = focusNode.leftNode;
 					if (focusNode == null) {
@@ -27,7 +27,7 @@ public class Tree {
 					}
 					
 				}
-				else if (key > newNode.getKey() ) {
+				else if (key > focusNode.getKey() ) {
 					parent = focusNode;
 					focusNode = focusNode.rightNode;
 					if (focusNode == null) {
