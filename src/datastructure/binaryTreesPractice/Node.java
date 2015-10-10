@@ -1,4 +1,4 @@
-package binaryTreesPractice;
+package datastructure.binaryTreesPractice;
 
 public class Node {
 	

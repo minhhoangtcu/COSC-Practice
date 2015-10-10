@@ -1,4 +1,4 @@
-package stacksAndQueuesPractice;
+package datastructure.stacksAndQueuesPractice;
 
 import java.util.Arrays;
 
