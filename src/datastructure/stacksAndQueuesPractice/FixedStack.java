@@ -3,7 +3,7 @@ package datastructure.stacksAndQueuesPractice;
 public class FixedStack<E> implements StackInterface<E>{
 	
 	protected E[] elements;
-	private int N;
+	protected int N; //size of the stack
 	
 	/*
 	 * Fast testing method.
