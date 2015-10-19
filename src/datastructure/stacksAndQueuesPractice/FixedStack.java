@@ -1,6 +1,11 @@
 package datastructure.stacksAndQueuesPractice;
 
-public class FixedStack<E> implements StackInterface<E>{
+import java.util.Iterator;
+
+/*
+ * First in Last out stack.
+ */
+public class FixedStack<E> implements StackInterface<E>, Iterable<E>{
 	
 	protected E[] elements;
 	protected int N; //size of the stack
@@ -33,6 +38,7 @@ public class FixedStack<E> implements StackInterface<E>{
 		System.out.println(stack.pop());
 		System.out.println(stack.pop());
 		System.out.println(stack.pop());
+		System.out.println(stack.pop());
 		
 		stack.push("To");
 		stack.push("Be");
@@ -44,8 +50,12 @@ public class FixedStack<E> implements StackInterface<E>{
 		stack.push("Be");
 		stack.push("Or");
 		stack.push("Not");
-		stack.push("To");
+//		stack.push("To");
 //		stack.push("Be"); due to the fixed capacity, the stack can only hold a certain number of elements.
+		
+		for (String item: stack) {
+			System.out.println(item);
+		}
 	}
 	
 	public FixedStack() {
@@ -68,5 +78,23 @@ public class FixedStack<E> implements StackInterface<E>{
 	
 	public boolean isEmpty() {
 		return N == 0;
+	}
+
+	public Iterator<E> iterator() {
+		return new StackIterator();
+	}
+	
+	/*
+	 * The Iterator will stack with the item last inserted first. 
+	 */
+	protected class StackIterator implements Iterator<E>{
+		private int index = N;
+		public boolean hasNext() {
+			return index > 0; 
+		}
+		public E next() {
+			return elements[--index];
+		}
+		public void remove() {};
 	}
 }
