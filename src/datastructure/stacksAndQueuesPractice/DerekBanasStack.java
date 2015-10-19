@@ -2,13 +2,13 @@ package datastructure.stacksAndQueuesPractice;
 
 import java.util.Arrays;
 
-public class Stack {
+public class DerekBanasStack {
 	
 	int[] stack;
 	int topOfStack = -1;
 	int stackSize;
 	
-	public Stack(int stackSize) {
+	public DerekBanasStack(int stackSize) {
 		this.stackSize = stackSize;
 		stack = new int[stackSize];
 		Arrays.fill(stack, -1); // -1 will represent as empty. We can change this representation later.

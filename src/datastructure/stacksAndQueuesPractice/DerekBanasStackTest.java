@@ -4,12 +4,12 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class StackTest {
+public class DerekBanasStackTest {
 
 	@Test
 	public void test() {
 		int stackSize = 5;
-		Stack stack = new Stack(stackSize);
+		DerekBanasStack stack = new DerekBanasStack(stackSize);
 		stack.push(5);
 		assertEquals(5, stack.pop());
 		stack.push(6);
