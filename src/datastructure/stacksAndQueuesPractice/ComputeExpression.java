@@ -1,7 +1,5 @@
 package datastructure.stacksAndQueuesPractice;
 
-import java.util.StringTokenizer;
-
 public class ComputeExpression {
 	
 	public static void main(String[] args) {
@@ -75,16 +73,6 @@ public class ComputeExpression {
 	private boolean isFloat(String character) {
 		try {
 			Float.parseFloat(character);
-			return true;
-		}
-		catch (Exception e) {
-			return false;
-		}
-	}
-	
-	private boolean isInteger(String character) {
-		try {
-			Integer.parseInt(character);
 			return true;
 		}
 		catch (Exception e) {
