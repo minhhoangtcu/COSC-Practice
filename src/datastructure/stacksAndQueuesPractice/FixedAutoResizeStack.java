@@ -6,35 +6,6 @@ package datastructure.stacksAndQueuesPractice;
  */
 public class FixedAutoResizeStack<E> extends FixedStack<E>{
 	
-	public static void main(String[] args) {
-		FixedAutoResizeStack<String> stack = new FixedAutoResizeStack<>();
-		
-		stack.push("To");
-		stack.push("Be");
-		stack.push("Or");
-		stack.push("Not");
-		stack.push("To");
-		stack.push("Be");
-		stack.push("To");
-		stack.push("Be");
-		stack.push("Or");
-		stack.push("Not");
-		stack.push("To");
-		stack.push("Be");
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-	}
-	
 	public FixedAutoResizeStack() {
 		this(5);
 	}
