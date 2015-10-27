@@ -7,26 +7,165 @@ import org.junit.Test;
 public class StackTest {
 
 	@Test
-	public void test() {
-		int stackSize = 5;
-		Stack stack = new Stack(stackSize);
-		stack.push(5);
-		assertEquals(5, stack.pop());
-		stack.push(6);
-		stack.push(8);
-		stack.push(3);
-		stack.push(4);
-		stack.push(1);
-		stack.push(8); // will be full
-		assertEquals(1, stack.peek());
-		stack.printAll();
-		assertEquals(1, stack.pop());
-		assertEquals(4, stack.pop());
-		assertEquals(3, stack.pop());
-		assertEquals(8, stack.pop());
-		assertEquals(6, stack.pop());
-		assertEquals(-1, stack.pop()); // Empty
-		stack.printAll();
+	public void testFixedStack() {
+		FixedStack<String> stack = new FixedStack<>();
+
+		stack.push("To");
+		System.out.println();
+		assertSame(stack.pop(), "To");
+
+		stack.push("To");
+		stack.push("Be");
+		stack.push("Or");
+		stack.push("Not");
+		assertSame(stack.pop(), "Not");
+		assertSame(stack.pop(), "Or");
+		assertSame(stack.pop(), "Be");
+
+		stack.push("Be");
+		stack.push("Or");
+		stack.push("Not");
+		stack.push("To");
+		stack.push("Be");
+		assertSame(stack.pop(), "Be");
+		assertSame(stack.pop(), "To");
+		assertSame(stack.pop(), "Not");
+		assertSame(stack.pop(), "Or");
+		assertSame(stack.pop(), "Be");
+		assertSame(stack.pop(), "To");
+
+		stack.push("To");
+		stack.push("Be");
+		stack.push("Or");
+		stack.push("Not");
+		stack.push("To");
+		stack.push("Be");
+		stack.push("To");
+		stack.push("Be");
+		stack.push("Or");
+		stack.push("Not");
+		// stack.push("To");
+		// stack.push("Be"); due to the fixed capacity, the stack can only hold
+		// a certain number of elements.
 	}
 
+	@Test
+	public void testAutoResizeStack() {
+		FixedAutoResizeStack<String> stack = new FixedAutoResizeStack<>();
+
+		stack.push("To");
+		stack.push("Be");
+		stack.push("Or");
+		stack.push("Not");
+		stack.push("To");
+		stack.push("Be");
+		stack.push("To");
+		stack.push("Be");
+		stack.push("Or");
+		stack.push("Not");
+		stack.push("To");
+		stack.push("Be");
+		assertSame(stack.pop(), "Be");
+		assertSame(stack.pop(), "To");
+		assertSame(stack.pop(), "Not");
+		assertSame(stack.pop(), "Or");
+		assertSame(stack.pop(), "Be");
+		assertSame(stack.pop(), "To");
+		assertSame(stack.pop(), "Be");
+		assertSame(stack.pop(), "To");
+		assertSame(stack.pop(), "Not");
+		assertSame(stack.pop(), "Or");
+		assertSame(stack.pop(), "Be");
+		assertSame(stack.pop(), "To");
+	}
+
+	@Test
+	public void testLinkedListStack() {
+		LinkedListStack<String> stack = new LinkedListStack<>();
+		stack.push("To");
+		stack.push("Be");
+		stack.push("Or");
+		stack.push("Not");
+		stack.push("To");
+		stack.push("Be");
+		stack.push("To");
+		stack.push("Be");
+		stack.push("Or");
+		stack.push("Not");
+		stack.push("To");
+		stack.push("Be");
+		assertSame(stack.pop(), "Be");
+		assertSame(stack.pop(), "To");
+		assertSame(stack.pop(), "Not");
+		assertSame(stack.pop(), "Or");
+		assertSame(stack.pop(), "Be");
+		assertSame(stack.pop(), "To");
+		assertSame(stack.pop(), "Be");
+		assertSame(stack.pop(), "To");
+		assertSame(stack.pop(), "Not");
+		assertSame(stack.pop(), "Or");
+		assertSame(stack.pop(), "Be");
+		assertSame(stack.pop(), "To");
+		
+		stack.push("To");
+		System.out.println();
+		assertSame(stack.pop(), "To");
+
+		stack.push("To");
+		stack.push("Be");
+		stack.push("Or");
+		stack.push("Not");
+		assertSame(stack.pop(), "Not");
+		assertSame(stack.pop(), "Or");
+		assertSame(stack.pop(), "Be");
+
+		stack.push("Be");
+		stack.push("Or");
+		stack.push("Not");
+		stack.push("To");
+		stack.push("Be");
+		assertSame(stack.pop(), "Be");
+		assertSame(stack.pop(), "To");
+		assertSame(stack.pop(), "Not");
+		assertSame(stack.pop(), "Or");
+		assertSame(stack.pop(), "Be");
+		assertSame(stack.pop(), "To");		
+	}
+	
+	@Test
+	public void testLinkedListIterato() {
+		LinkedListStack<String> stack = new LinkedListStack<>();
+		
+		stack.push("Be");
+		stack.push("To");
+		stack.push("Not");
+		stack.push("Or");
+		stack.push("Be");
+		stack.push("To");
+		
+		stack.push("Be");
+		stack.push("To");
+		stack.push("Not");
+		stack.push("Or");
+		stack.push("Be");
+		stack.push("To");
+		
+		stack.push("Be");
+		stack.push("To");
+		stack.push("Not");
+		stack.push("Or");
+		stack.push("Be");
+		stack.push("To");
+		
+		stack.push("Be");
+		stack.push("To");
+		stack.push("Not");
+		stack.push("Or");
+		stack.push("Be");
+		stack.push("To");
+		
+		for (String text: stack) {
+			System.out.print(text + " ");
+		}
+	}
 }

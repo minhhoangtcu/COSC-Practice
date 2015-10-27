@@ -2,13 +2,13 @@ package datastructure.stacksAndQueuesPractice;
 
 import java.util.Arrays;
 
-public class Queue {
+public class DerekBanasQueue {
 	
 	private int[] queueArray;
 	private int queueSize;
 	private int front, numberOfItems, rear = 0;
 	
-	public Queue(int queueSize){
+	public DerekBanasQueue(int queueSize){
 		this.queueSize = queueSize;
 		queueArray = new int[queueSize];
 		Arrays.fill(queueArray, -1);
