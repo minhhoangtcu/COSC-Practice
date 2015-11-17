@@ -105,6 +105,53 @@ public class Tree<T extends Comparable<T>> {
 			}
 		}
 	}
+	
+	public T succ(T data) {
+		Node<T> x = succ(root, null, data);
+		if (x == null)
+			return null;
+		else
+			return x.data;
+	}
+	
+	/**
+	 * Find in-order successor of a given node
+	 * @param current
+	 * @param previous
+	 * @param data
+	 * @return
+	 */
+	public Node<T> succ(Node<T> current, Node<T> previous, T data) {
+		if (current == null)
+			return null;
+		else {
+			int comp = data.compareTo(current.data);
+			if (comp < 0)
+				return succ(current.left, current, data);
+			else if (comp > 0)
+				return succ(current.right, current, data);
+			else { // reached a node with same key. So we need to find the succ of this node.
+				if (current.right != null)
+					return leftMost(current.right);
+				else if (previous.left == current)
+					return previous;
+				else
+					return null;
+			}
+		}
+	}
+
+	private Node<T> leftMost(Node<T> right) {
+		if (right == null)
+			return null;
+		else {
+			Node<T> current = right;
+			while (current.left != null) {
+				current = current.left;
+			}
+			return current;
+		}
+	}
 
 	public void push(T[] input) {
 		for (T each: input) {
@@ -119,5 +166,4 @@ public class Tree<T extends Comparable<T>> {
 	public boolean isEmpty() {
 		return (root == null);
 	}
-	
 }

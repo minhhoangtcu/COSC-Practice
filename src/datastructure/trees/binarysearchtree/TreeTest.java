@@ -14,6 +14,10 @@ public class TreeTest {
 		System.out.println("Ceil of I: " + tree.ceil("i"));
 		System.out.println("Ceil of D: " + tree.ceil("d"));
 		System.out.println("Ceil of F: " + tree.ceil("f"));
+		System.out.println("Succ of A: " + tree.succ("a"));
+		System.out.println("Succ of G: " + tree.succ("g"));
+		System.out.println("Succ of H: " + tree.succ("h"));
+		System.out.println("Succ of U: " + tree.succ("u"));
 		
 		System.out.println("Print In-Order");
 		traversal.printInOrderRecursively(tree.root);
