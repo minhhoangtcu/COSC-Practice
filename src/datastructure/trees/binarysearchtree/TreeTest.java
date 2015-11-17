@@ -29,6 +29,8 @@ public class TreeTest {
 		traversal.printPreORderRecursively(tree.root);
 		System.out.println("\nPrint Post-Order");
 		traversal.printPostOrderRecursively(tree.root);
+		System.out.println("\nPrint Level-Order");
+		traversal.printLevelOrderIteratively(tree.root);
 	}
 
 }
