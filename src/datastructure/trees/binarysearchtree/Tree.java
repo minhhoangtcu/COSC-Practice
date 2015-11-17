@@ -38,26 +38,32 @@ public class Tree<T extends Comparable<T>> {
 		}
 	}
 	
-	public T predecessor(T data) {
-		Node<T> x = predecessor(root, data);
+	public T floor(T data) {
+		Node<T> x = floor(root, data);
 		if (x == null)
 			return null;
 		else
 			return x.data;
 	}
 	
-	private Node<T> predecessor(Node<T> node, T data) {
-		if (node == null | isEmpty())
+	/**
+	 * Find the floor of a given data within the tree recursively.
+	 * @param node
+	 * @param data
+	 * @return
+	 */
+	private Node<T> floor(Node<T> node, T data) {
+		if (node == null)
 			return null;
 		else {
 			int comp = data.compareTo(node.data);
-			if (comp == 0) // Found a node similar that has the same key with the provided key, so this must be the predecessor
+			if (comp == 0) // Found a node similar that has the same key with the provided key, so this must be the floor
 				return node;
 			else if (comp < 0)
-				return predecessor(node.left, data); // If the node key is less than the key, then the predecessor must be on the left
+				return floor(node.left, data); // If the node key is less than the key, then the floor must be on the left
 			else {
-				Node<T> right = predecessor(node.right, data); // If the node key is more than the key, the the predecessor may be on the right. 
-															   // If there is one, return it. If not, return the parent.
+				Node<T> right = floor(node.right, data); // If the node key is more than the key, the floor may be on the right. 
+													     // If there is one, return it. If not, return the parent.
 				if (right != null) 
 					return right;
 				else
@@ -66,10 +72,40 @@ public class Tree<T extends Comparable<T>> {
 		}
 	}
 	
-	public Node successor() {
-		return null;
+	public T ceil(T data) {
+		Node<T> x = ceil(root, data);
+		if (x == null)
+			return null;
+		else
+			return x.data;
 	}
 	
+	/**
+	 * Find the ceiling of a given data within the tree recursively
+	 * @param node
+	 * @param data
+	 * @return
+	 */
+	private Node<T> ceil(Node<T> node, T data) {
+		if (node == null)
+			return null;
+		else {
+			int comp = data.compareTo(node.data);
+			if (comp == 0) // Found a node similar that has the same key with the provided key, so this must be the ceil
+				return node;
+			else if (comp > 0)
+				return ceil(node.right, data);
+			else {
+				Node<T> left = ceil(node.left, data);
+				
+				if (left != null)
+					return left;
+				else
+					return node;
+			}
+		}
+	}
+
 	public void push(T[] input) {
 		for (T each: input) {
 			push(each);

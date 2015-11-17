@@ -8,9 +8,12 @@ public class TreeTest {
 		
 		String[] input = {"a", "c", "g", "b", "e", "h", "r", "u"};
 		tree.push(input);
-		System.out.println("Pred of C: " + tree.predecessor("i"));
-		System.out.println("Pred of D: " + tree.predecessor("d"));
-		System.out.println("Pred of F: " + tree.predecessor("f"));
+		System.out.println("Floor of I: " + tree.floor("i"));
+		System.out.println("Floor of D: " + tree.floor("d"));
+		System.out.println("Floor of F: " + tree.floor("f"));
+		System.out.println("Ceil of I: " + tree.ceil("i"));
+		System.out.println("Ceil of D: " + tree.ceil("d"));
+		System.out.println("Ceil of F: " + tree.ceil("f"));
 		
 		System.out.println("Print In-Order");
 		traversal.printInOrderRecursively(tree.root);
