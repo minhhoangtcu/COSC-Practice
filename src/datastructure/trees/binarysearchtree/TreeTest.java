@@ -18,6 +18,10 @@ public class TreeTest {
 		System.out.println("Succ of G: " + tree.succ("g"));
 		System.out.println("Succ of H: " + tree.succ("h"));
 		System.out.println("Succ of U: " + tree.succ("u"));
+		System.out.println("Pred of A: " + tree.pred("a"));
+		System.out.println("Pred of G: " + tree.pred("g"));
+		System.out.println("Pred of H: " + tree.pred("h"));
+		System.out.println("Pred of U: " + tree.pred("u"));
 		
 		System.out.println("Print In-Order");
 		traversal.printInOrderRecursively(tree.root);

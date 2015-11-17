@@ -46,12 +46,6 @@ public class Tree<T extends Comparable<T>> {
 			return x.data;
 	}
 	
-	/**
-	 * Find the floor of a given data within the tree recursively.
-	 * @param node
-	 * @param data
-	 * @return
-	 */
 	private Node<T> floor(Node<T> node, T data) {
 		if (node == null)
 			return null;
@@ -80,12 +74,6 @@ public class Tree<T extends Comparable<T>> {
 			return x.data;
 	}
 	
-	/**
-	 * Find the ceiling of a given data within the tree recursively
-	 * @param node
-	 * @param data
-	 * @return
-	 */
 	private Node<T> ceil(Node<T> node, T data) {
 		if (node == null)
 			return null;
@@ -113,14 +101,7 @@ public class Tree<T extends Comparable<T>> {
 		else
 			return x.data;
 	}
-	
-	/**
-	 * Find in-order successor of a given node
-	 * @param current
-	 * @param previous
-	 * @param data
-	 * @return
-	 */
+
 	public Node<T> succ(Node<T> current, Node<T> previous, T data) {
 		if (current == null)
 			return null;
@@ -133,7 +114,35 @@ public class Tree<T extends Comparable<T>> {
 			else { // reached a node with same key. So we need to find the succ of this node.
 				if (current.right != null)
 					return leftMost(current.right);
-				else if (previous.left == current)
+				else if (previous != null && previous.left == current)
+					return previous;
+				else
+					return null;
+			}
+		}
+	}
+	
+	public T pred(T data) {
+		Node<T> x = pred(root, null, data);
+		if (x == null)
+			return null;
+		else
+			return x.data;
+	}
+	
+	public Node<T> pred(Node<T> current, Node<T> previous, T data) {
+		if (current == null)
+			return null;
+		else {
+			int comp = data.compareTo(current.data);
+			if (comp < 0)
+				return pred(current.left, current, data);
+			else if (comp > 0)
+				return pred(current.right, current, data);
+			else { // reached a node with same key. So we need to find the pred of this node.
+				if (current.left != null)
+					return rightMost(current.left);
+				else if (previous != null && previous.right == current)
 					return previous;
 				else
 					return null;
@@ -141,13 +150,25 @@ public class Tree<T extends Comparable<T>> {
 		}
 	}
 
-	private Node<T> leftMost(Node<T> right) {
-		if (right == null)
+	private Node<T> leftMost(Node<T> node) {
+		if (node == null)
 			return null;
 		else {
-			Node<T> current = right;
+			Node<T> current = node;
 			while (current.left != null) {
 				current = current.left;
+			}
+			return current;
+		}
+	}
+	
+	private Node<T> rightMost(Node<T> node) {
+		if (node == null)
+			return null;
+		else {
+			Node<T> current = node;
+			while (current.right != null) {
+				current = current.right;
 			}
 			return current;
 		}
